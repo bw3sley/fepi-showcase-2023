@@ -80,11 +80,11 @@ function didUserWin(currentClass) {
 
 function handleEndGame(isDraw) {
     if (isDraw) {
-        winningMessageText.textContent = "It's a draw!";
+        winningMessageText.textContent = "Deu empate!";
     }
 
     else {
-        winningMessageText.textContent = `${isCircleTurn ? "O's" : "X's"} wins!`; 
+        winningMessageText.textContent = `${isCircleTurn ? "O's" : "X's"} venceu!`; 
     }
 
     winningMessage.classList.add("show");

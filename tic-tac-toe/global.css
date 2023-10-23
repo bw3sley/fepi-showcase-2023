@@ -11,6 +11,12 @@
 body, html {
     width: 100%;
     height: 100%;
+
+    overflow: hidden;
+}
+
+body, body * {
+    font-family: "Rubik", sans-serif;
 }
 
 .board {
@@ -26,7 +32,7 @@ body, html {
 }
 
 :root {
-    --cell-size: 100px;
+    --cell-size: 200px;
     --mark-size: calc(var(--cell-size) * .9);
 }
 
@@ -113,23 +119,35 @@ body, html {
 .winning-message {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .9);
+    inset: 0;
+    background-color: rgba(0, 0, 0, .8);
+
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 5rem;
     flex-direction: column;
+    gap: .5rem;
+
+    color: white;
+    
+    font-size: 2.5rem;
 }
 
 .winning-message button {
-    font-size: 3rem;
-    background-color: white;
-    border: 1px solid black;
-    padding: .25em .5em;
+    border: 1px solid #333333;
+    border-radius: 100px;
+
+    padding: .5rem 1rem;
+    
+    font-size: 1rem;
+    font-weight: 600;
+    
+    color: #333333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    
     cursor: pointer;
 }
 

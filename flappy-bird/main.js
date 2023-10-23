@@ -9,7 +9,6 @@ const canvas = document.querySelector('canvas');
 const contexto = canvas.getContext('2d');
 
 
-// [Plano de Fundo]
 const planoDeFundo = {
   spriteX: 390,
   spriteY: 0,
@@ -39,7 +38,6 @@ const planoDeFundo = {
   },
 };
 
-// [Chao]
 function criaChao() {
   const chao = {
     spriteX: 0,
@@ -145,7 +143,6 @@ function criaFlappyBird() {
   }
   return flappyBird;  
 }
-
 
 const mensagemGetReady = {
   sX: 134,
