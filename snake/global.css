@@ -46,9 +46,7 @@ canvas:hover {
 
   position: absolute;
   top: 5rem;
-  left: 50%;
-
-  transform: translateX(-50%);
+  left: 5rem;
 
   font-size: 1.8rem;
 }
