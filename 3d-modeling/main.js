@@ -66,84 +66,39 @@ form.onsubmit = (event) => {
 
     const wrapper = document.querySelector("#final-message");
 
-    if (userAnswers.length === 5) {
-        const strong = document.createElement("strong");
-        const p = document.createElement("p");
-        
-        strong.classList.add("text-2xl");
+    const strong = document.createElement("strong");
+    const p = document.createElement("p");
+    const reloadButton = document.createElement("button");
+    
+    strong.classList.add("text-2xl");
 
+    reloadButton.type = "button";
+    reloadButton.classList.add("reload-button");
+    reloadButton.innerHTML = `<i class="ph-fill ph-arrow-clockwise"></i> Tentar novamente`;
+
+    if (userAnswers.length === 5) {
         strong.textContent = "Parabéns! Você acertou todas as questões! 🎉👏";
 
         p.textContent = "Você é realmente incrível e demonstrou um conhecimento impressionante. Continue assim e continue se desafiando. Continue com esse espírito vencedor! Para retirar seu brinde, tire uma foto do placar, poste em seu Instagram marcando @fepi.siads e mostre para algum aluno.";
-
-        const reloadButton = document.createElement("button");
-
-        reloadButton.type = "button";
-        reloadButton.classList.add("reload-button");
-        reloadButton.innerHTML = `<i class="ph-fill ph-arrow-clockwise"></i> Tentar novamente`;
-
-        wrapper.append(strong, p, reloadButton);
-
-        button.setAttribute("disabled", true);
-
-        reloadButton.addEventListener("click", (event) => {
-            console.log("rodou");
-            location.reload();
-        })
     }
 
     else if (userAnswers.length >= 1 && userAnswers.length <= 4) {
-        const strong = document.createElement("strong");
-        const p = document.createElement("p");
-        
-        strong.classList.add("text-2xl");
-
         strong.textContent = `Parabéns! Você acertou entre ${userAnswers.length} e 5 questões! 🎉`;
 
         p.textContent = "Isso mostra que você tem um bom conhecimento e habilidades. Continue praticando e estudando para melhorar ainda mais. Cada acerto é um passo na direção certa, e você está no caminho certo para o sucesso. Continue assim! Para retirar seu brinde, tire uma foto do placar, poste em seu Instagram marcando @fepi.siads e mostre para algum aluno.";
-
-        const reloadButton = document.createElement("button");
-
-        reloadButton.type = "button";
-        reloadButton.classList.add("reload-button");
-        reloadButton.innerHTML = `<i class="ph-fill ph-arrow-clockwise"></i> Tentar novamente`;
-
-        wrapper.append(strong, p, reloadButton);
-
-        button.setAttribute("disabled", true);
-
-        reloadButton.addEventListener("click", (event) => {
-            console.log("rodou");
-            location.reload();
-        })
     }
 
     else {
-        const strong = document.createElement("strong");
-        const p = document.createElement("p");
-        
-        strong.classList.add("text-2xl");
-
         strong.textContent = "Você não acertou nenhuma questão, porém não desanime! Às vezes, errar é apenas um passo em direção ao sucesso";
 
         p.textContent = "Mesmo que você não tenha acertado nenhuma questão neste quiz, lembre-se de que é uma oportunidade de aprender e melhorar. Use isso como motivação para estudar mais e se preparar melhor da próxima vez. O importante é continuar tentando e nunca desistir. Seu esforço será recompensado, e você certamente vai progredir. Você pode refazer o quiz para conseguir seu brinde.";
-
-        const reloadButton = document.createElement("button");
-
-        reloadButton.type = "button";
-        reloadButton.classList.add("reload-button");
-        reloadButton.innerHTML = `<i class="ph-fill ph-arrow-clockwise"></i> Tentar novamente`;
-        
-        wrapper.append(strong, p, reloadButton);
-
-        button.setAttribute("disabled", true);
-
-        reloadButton.addEventListener("click", (event) => {
-            console.log("rodou");
-            location.reload();
-        })
     }
+
+    wrapper.append(strong, p, reloadButton);
+
+    button.setAttribute("disabled", true);
+
+    reloadButton.addEventListener("click", (event) => location.reload())
 
     wrapper.scrollIntoView();
 };
-
